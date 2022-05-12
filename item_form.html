@@ -9,58 +9,111 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">The <em><strong>Custom</strong></em> Furniture Store</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="products.html">Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">The <em><strong>Custom</strong></em> Furniture Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./products.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./form.html">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./product-item-sofa.html">Sofa</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
     <div class="container">
         <br>
-      
-        
-         
 
+        <div class="row">
+          <h1 class="fw-bold text-center">Add a new product</h1>
+          <h4 class="fw-light text-center">Fill out the form below and submit to add a new product.</h4>
+        </div>
+        <br>
 
+        <div class="row">
+          <div class="col">
+            <form>
+            <div class="mb-3">
+              <label for="product-name" class="form-label">Product name</label>
+              <input required type="text" class="form-control" id="product-name" placeholder="Enter product name (required)">
+            </div>
 
-    
+            <div class="mb-3">
+              <label for="product-description" class="form-label">Short description</label>
+              <input type="text" class="form-control" id="product-description" placeholder="Enter product short description">
+            </div>
+
+            <div class="dropdown">
+              <label for="category" class="form-label">Category</label>
+              
+              <select class="form-select" id="category" aria-label="category">
+                <option selected>Choose a product type</option>
+                <option value="1">Sofa</option>
+                <option value="2">Coffee table</option>
+                <option value="3">TV stand</option>
+              </select>
+            </div>
+            <br>
+
+            <div class="mb-3">
+              <label for="product-detail" class="form-label">Product details</label>
+              <textarea class="form-control" id="product-detail" rows="3" placeholder="Enter product detailed description"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="product-price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="product-price" placeholder="Price of product - number format">
+            </div>
+            <br>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="image-upload">Image upload</label>
+              <br>
+              <input type="file" class="form-control" id="image-upload">
+            </div>
+            <br>
+
+            <input class="btn btn-primary" type="submit" value="Submit">
+            
+          </form>
+          <br>
+          
+          </div>
+        </div>
+   
 
     </div>
 
