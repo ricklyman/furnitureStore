@@ -215,8 +215,8 @@
             name="phone"
             type="tel"
             placeholder="Phone Number"
-            minlength="12"
-            maxlength="10"
+            minlength="10"
+            maxlength="12"
             required
           />*
           <!--HOW OR AM I ABLE TO FORMAT PHONE NUMBER IN (XXX-XXX-XXXX)-->
@@ -240,9 +240,42 @@
         
       </form>
 	  <br>
-
+    <div id="result"></div>
     </div>
-	
+<script>
+class RegistrationController {
+    constructor(first, last, address, add2, city, state, zipcode, phone, email) {
+      this.first = first;
+      this.last = last;
+      this.address = address; 
+      this.add2 = add2;
+      this.city = city;
+	    this.state = state;
+  	  this.zipcode = zipcode;
+      this.phone = phone;
+	    this.email = email;
+      this.currentId = 0; //temporary //database id, from post
+      this.items = [] //local id, task 04, replaces currentID on fetch as noted below
+    }
+    addItem() {
+    //using form for now, fetch later
+    this.currentId = this.items.length //localStorage temporary global array? page, site, each fetch, ...
+    }
+  }
+
+let form = document.getElementsByTagName("form")[1];
+
+form.onsubmit = function (e) {
+  e.preventDefault();
+  let formRegistration = new RegistrationController(form[0].value, form[1].value, form[2].value, form[3].value, form[4].value, form[5].value, form[6].value, form[7].value, form[8].value)
+  console.log('formRegistration: ' + formRegistration);
+  let data = JSON.stringify(formRegistration)
+  let name = 'RegistrationController' + localStorage.length 
+  localStorage.setItem(name, data);
+  //save(data); //server
+  document.getElementById('result').innerHTML = `New registration added:&nbsp First Name: <strong><em>${formRegistration.first}</strong></em>&nbsp Last Name: <strong><em>${formRegistration.last}</em></strong>&nbsp Phone: <em><strong>${formRegistration.phone}</em></strong>&nbsp Email: <strong><em>${formRegistration.email}</em></strong>&nbsp Zip Code: <em><strong>${formRegistration.zipcode}</em></strong>`
+}
+  </script>
 
     <!--Bootstrap Bundle code-->
     <script
