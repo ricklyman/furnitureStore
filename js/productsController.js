@@ -57,4 +57,7 @@ function addProduct(e) {
 
 
 let submitBtn = document.getElementById("submit-button");
-submitBtn.addEventListener('click', addProduct)
+submitBtn.addEventListener('click', addProduct);
+
+let clearBtn = document.getElementById("clear-button");
+clearBtn.addEventListener('click', ()=> window.localStorage.clear());
